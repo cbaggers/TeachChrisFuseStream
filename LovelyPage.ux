@@ -1,0 +1,11 @@
+<Rectangle ux:Class="LovelyPage" Color="White">
+    <Blur ux:Name="ourBlur" Radius="0" />
+    <EnteringAnimation>
+        <Move X="-1" RelativeTo="Size" />
+    </EnteringAnimation>
+    <ExitingAnimation>
+        <Change ourBlur.Radius="16" />
+        <Move X="300" />
+        <Scale Factor="0.1" />
+    </ExitingAnimation>
+</Rectangle>
