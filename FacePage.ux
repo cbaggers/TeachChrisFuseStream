@@ -1,0 +1,20 @@
+<Page ux:Class="FacePage">
+    <Router ux:Dependency="depRouter" />
+    <JavaScript>
+        module.exports = {
+            info: this.Parameter.identity()
+        }
+    </JavaScript>
+    <HellButton Label="Back" Alignment="TopLeft">
+        <Tapped>
+            <GoBack NavigationContext="depRouter" />
+        </Tapped>
+    </HellButton>
+    <DockPanel>
+        <Text Value="{info.first_name} {info.last_name}"
+            Dock="Top" Alignment="Center" FontSize="32" />
+        <Image Url="{info.image}" />
+        <Text Value="{toUpper(info.location)}"
+            Dock="Bottom" Alignment="Center" FontSize="32" />
+    </DockPanel>
+</Page>

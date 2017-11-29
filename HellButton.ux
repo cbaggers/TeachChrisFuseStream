@@ -1,11 +1,11 @@
 <Rectangle ux:Class="HellButton" Color="Red" Label="HELL">
     <string ux:Property="Label" />
-    <Text ux:Name="disText" Value="{Property Label}" Color="White" 
+    <Text ux:Name="disText" Value="{Property Label}" Color="White"
           Alignment="Center" FontSize="32" Margin="8"
           Font="Bold" />
 
     <WhilePressed>
-        <Change this.Color="Yellow" />
+        <Change this.Color="Yellow" DurationBack=".5" />
         <Change disText.Color="Black" />
     </WhilePressed>
 </Rectangle>

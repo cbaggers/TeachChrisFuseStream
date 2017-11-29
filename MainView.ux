@@ -1,21 +1,7 @@
-<App Background="Gray"> 
-    <DockPanel>
-        <Image File="Assets/FuseLogo.png" Dock="Top"
-                MaxHeight="80" />
-        <PageControl ux:Name="ourPageControl" Transition="None"> 
-            <LovelyPage Color="Purple"/>
-            <LovelyPage Color="White"/>
-            <LovelyPage Color="Teal"/>
-        </PageControl>
-        <StackPanel ItemSpacing="4" Dock="Bottom">
-            <Each Count="3">
-                <HellButton Label="Foo {index()}" >
-                    <Tapped>
-                        <Set Target="ourPageControl.ActiveIndex" 
-                            Value="{index()}" />
-                    </Tapped>
-                </HellButton>
-            </Each>
-        </StackPanel>
-    </DockPanel>
+<App Background="White">
+    <Router ux:Name="router" />
+    <Navigator DefaultPath="navListPage">
+        <ListPage ux:Template="navListPage" depRouter="router" />
+        <FacePage ux:Template="navFacePage" depRouter="router" />
+    </Navigator>
 </App>

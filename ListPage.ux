@@ -1,0 +1,25 @@
+<Page ux:Class="ListPage">
+    <Router ux:Dependency="depRouter" />
+
+    <JavaScript>
+        const model = require("oooh");
+
+        module.exports = {
+            people: model.getPeople(),
+            selectPerson: function(args) {
+                depRouter.push("navFacePage", args.data)
+            }
+        }
+    </JavaScript>
+
+    <ScrollView>
+        <StackPanel>
+            <Each Items="{people}">
+                <DockPanel Tapped="{selectPerson}">
+                    <Text Value="{first_name}" />
+                    <Image Url="{image}" Dock="Left" Height="70" />
+                </DockPanel>
+            </Each>
+        </StackPanel>
+    </ScrollView>
+</Page>
